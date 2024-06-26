@@ -69,3 +69,31 @@ button:hover {
 * {
     transition: all 0.3s ease-in-out;
 }
+
+/* New CSS for the red border effect */
+body.simulation-success::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 10px; /* Adjust padding to control the size of the animated border */
+    z-index: 9999; /* Ensure overlay is above all other content */
+    pointer-events: none; /* Allow clicks to pass through the overlay */
+    background: radial-gradient(circle, transparent, transparent 50%, red 70%);
+    border: 10px solid transparent;
+    box-shadow: 0 0 0 9999px rgba(255, 0, 0, 0.4); /* Adjust the last value (0.4) to control the fade intensity */
+}
+
+@keyframes borderFade {
+    from {
+        transform: scale(0); /* Start with no size */
+        opacity: 1; /* Fully opaque */
+    }
+    to {
+        transform: scale(1); /* Scale to full size */
+        opacity: 0; /* Fade out */
+    }
+}

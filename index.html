@@ -7,10 +7,10 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
+    <audio id="successSound" src="https://raw.githubusercontent.com/mashel44/sounds/main/ln_legendarny.mp3"></audio>
     <form>
 
-    <h1>Szansa na legendę</h1>
+        <h1>Szansa na legendę</h1>
 
         <input type="radio" id="heros" name="mobType">
         <label for="heros">Heros</label><br>
@@ -18,16 +18,18 @@
         <input type="radio" id="tytan" name="mobType">
         <label for="tytan">Tytan</label><br><br>
 
-
-
-
         <label for="myRange"> Ilość osób w grupie:</label>
         <span id="sliderValue">1</span><br>
         <input type="range" id="myRange" name="rangeSlider" min="1" max="10" value="1"><br>
 
-        <button type="button" onclick="execute()">Oblicz</button>
+        <button type="button" onclick="execute_chances()">Oblicz</button>
 
-        <p id="result"></p>
+        <p id="result"></p><br>
+
+        <button type="button" onclick="execute_simulation()">Symuluj</button>
+
+        <p id="simulationResult">xd</p>
+
     </form>
 
     <script src="index.js"></script>
